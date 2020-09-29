@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <inttypes.h>
 #include <assert.h>
-#include <cstdlib>
+#include <stdlib.h>
 uint64_t multimod(uint64_t, uint64_t, uint64_t);
 
 void test(uint64_t a, uint64_t b, uint64_t m) {
