@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <inttypes.h>
+#include <assert.h>
 
 uint64_t multimod(uint64_t, uint64_t, uint64_t);
 
