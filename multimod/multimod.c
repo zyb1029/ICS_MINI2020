@@ -29,6 +29,7 @@ uint64_t ksc(uint64_t a, uint64_t b, uint64_t m, uint64_t p) {
 }
 uint64_t multimod(uint64_t a, uint64_t b, uint64_t m) {
   a = quick_mod(a, m);
+  uint64_t p;
   p = quick_mod(-1ULL, m);
   p = quick_mod(p + 1, m);
   return ksc(a, b, m, p); // buggy
