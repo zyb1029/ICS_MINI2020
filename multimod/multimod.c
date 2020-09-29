@@ -1,5 +1,5 @@
 #include<stdint.h>
-
+#include<stdio.h>
 uint64_t quick_mod(uint64_t a, uint64_t b) {
 	while(1) {
 		if (b > a) return a;
