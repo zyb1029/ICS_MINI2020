@@ -1,6 +1,7 @@
 #include<stdint.h>
 #include<stdio.h>
 uint64_t quick_mod(uint64_t a, uint64_t b) {
+	#define U64 "%" PRIu64
 	printf("U64 ", a%b);
 	while(1) {
 		if (b > a) return a;
