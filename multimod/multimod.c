@@ -1,5 +1,7 @@
 #include<stdint.h>
+#include<stdio.h>
 uint64_t quick_mod(uint64_t a, uint64_t b) {
+	printf("%d ", a%b);
 	while(1) {
 		if (b > a) return a;
 		if ((b << 1) > a || b >= (1ULL<<63) ) {
@@ -11,6 +13,7 @@ uint64_t quick_mod(uint64_t a, uint64_t b) {
 		if (a >= b) a -= b;	
 		b = b >> 1;
 	}
+	printf("%d\n", a);
 	return a;
 }
 uint64_t add(uint64_t a, uint64_t b, uint64_t m, uint64_t p) {
