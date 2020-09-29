@@ -3,7 +3,7 @@
 uint64_t quick_mod(uint64_t a, uint64_t b) {
 	while(1) {
 		if (b > a) return a;
-		if ((b << 1) > a || b >= (1(uint64_t)<<63) ) {
+		if ((b << 1) > a || b >= ((uint64_t)1<<63) ) {
 			break;
 		}
 		b = b << 1;
