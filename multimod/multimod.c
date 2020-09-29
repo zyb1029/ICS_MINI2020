@@ -15,7 +15,10 @@ uint64_t quick_mod(uint64_t a, uint64_t b) {
 	return a;
 }
 uint64_t add(uint64_t a, uint64_t b, uint64_t m, uint64_t p) {
-	if (a + b < a) return quick_mod(a + b, m) + p;
+	if (a + b < a){
+		printf("ds");
+		 return quick_mod(a + b, m) + p;
+	}
 	else return quick_mod(a + b, m);
 }
 uint64_t ksc(uint64_t a, uint64_t b, uint64_t m, uint64_t p) {
