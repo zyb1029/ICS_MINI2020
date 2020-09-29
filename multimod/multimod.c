@@ -1,9 +1,9 @@
 #include<stdint.h>
 
-uint64_t quick_mod(uint32_t a, uint32_t b) {
+uint64_t quick_mod(uint64_t a, uint64_t b) {
 	while(1) {
 		if (b > a) return a;
-		if ((b << 1) > a || b >= (1<<63) ) {
+		if ((b << 1) > a || b >= (1u<<63) ) {
 			break;
 		}
 		b = b << 1;
