@@ -3,11 +3,12 @@
 uint64_t quick_mod(uint64_t a, uint64_t b) {
 	int sum = 0;
 	while(1) {
+		sum++;
 		if (b > a) return a;
 		if ((b << 1) > a || b >= (1ULL<<63) ) {
 			break;
 		}
-		b = b << 1; sum++;
+		b = b << 1; 
 	}
 	while(sum--) {
 		if (a >= b) a -= b;	
