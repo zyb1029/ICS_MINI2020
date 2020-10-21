@@ -5,12 +5,11 @@ int64_t asm_add(int64_t a, int64_t b) {
   asm("movq %0, %%rax;\n"
 	  "movq %1, %%rcx;\n"
 	  "addq %%rcx, %%rax;\n"
-	  "leave"
-	  "ret"
 	  :
 	  : "r"(a), "r"(b)
 	  : "%rax", "%rcx"
 	  );
+	  return 0;
 }
 
 int asm_popcnt(uint64_t x) {
