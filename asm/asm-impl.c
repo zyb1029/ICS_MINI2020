@@ -3,13 +3,11 @@
 
 int64_t asm_add(int64_t a, int64_t b) {
   int64_t c;
-  asm("movq %1, %%rax;\n"
-	  "movq %2, %%rcx;\n"
-	  "addq %%rcx, %%rax;\n"
+  asm("movq %1, %0;\n"
+	  "addq %2, %0;\n"
 	  "ret;\n"
 	  : "r="(c)
 	  : "r"(a), "r"(b)
-	  : "%rax", "%rcx"
 	  );
 	  return c;
 }
