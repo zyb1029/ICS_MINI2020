@@ -3,8 +3,8 @@
 
 int64_t asm_add(int64_t a, int64_t b) {
   int64_t c;
-  asm("movq %0, %%rax;\n"
-	  "movq %1, %%rcx;\n"
+  asm("movq %1, %%rax;\n"
+	  "movq %2, %%rcx;\n"
 	  "addq %%rcx, %%rax;\n"
 	  "ret;\n"
 	  : "r="(c)
