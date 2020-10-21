@@ -7,7 +7,7 @@ int64_t asm_add(int64_t a, int64_t b) {
 	  "addq %%rcx, %%rax;\n"
 	  :
 	  : "r"(a), "r"(b)
-	  : "%rax", "rcx"
+	  : "%rax", "%rcx"
 	  );
 }
 
