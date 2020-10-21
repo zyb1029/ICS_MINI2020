@@ -6,7 +6,7 @@ int64_t asm_add(int64_t a, int64_t b) {
   asm("movq %1, %0;\n"
 	  "addq %2, %0;\n"
 	  "ret;\n"
-	  : "r="(c)
+	  : "=r"(c)
 	  : "r"(a), "r"(b)
 	  );
 	  return c;
