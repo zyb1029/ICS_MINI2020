@@ -20,7 +20,8 @@ int asm_popcnt(uint64_t x) {
 		"addq %%rax, %1"
 		:"=r"(x)
 	    :"r"(s) 
-  };
+  
+  );
   return s;
 }
 
