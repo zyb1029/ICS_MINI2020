@@ -16,7 +16,7 @@ int asm_popcnt(uint64_t x) {
   for (int i = 0; i < 64; i++) {
      asm volatile("mov 1, %%rax;\n\t"
 		"and %0, %%rax;\n\t"
-		"shrq 1, %%eax;\n\t"
+		"shr 1, %%eax;\n\t"
 		"add %%eax, %2;"
 		:"=r"(x)
 	    :"r"(x), "r"(s) 
