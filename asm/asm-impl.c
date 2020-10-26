@@ -14,7 +14,7 @@ int64_t asm_add(int64_t a, int64_t b) {
 int asm_popcnt(uint64_t x) {
   int s = 0;
   for (int i = 0; i < 64; i++) {
-     asm volatile("movq 1, %%eax\n\t"
+     asm volatile("mov 1, %%eax\n\t"
 		"andq %0, %%eax\n\t"
 		"shrq %0, 1\n\t"
 		"addl %%eax, %1"
