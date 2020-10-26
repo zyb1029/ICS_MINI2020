@@ -15,8 +15,8 @@ int asm_popcnt(uint64_t x) {
   int64_t s = 0;
   asm volatile( 
                "mov %1, %0;"
-			   : "=r"(x) 
-			   : "r"(s)
+			   : "=r"(s) 
+			   : "r"(x)
 			   );
   return s;
 }
