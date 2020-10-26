@@ -18,9 +18,9 @@ int asm_popcnt(uint64_t x) {
 		"and %0, %%rax\n\t"
 		"shr %0, 1\n\t"
 		"add %%eax, %1"
-		:"+r"(x)
+		:"=m"(x)
 	    :"r"(s) 
-  
+		:"memory"
 		);
   }
   return s;
