@@ -21,7 +21,8 @@ int asm_popcnt(uint64_t x) {
 		:"=r"(x)
 	    :"r"(s) 
   
-  );
+		);
+  }
   return s;
 }
 
