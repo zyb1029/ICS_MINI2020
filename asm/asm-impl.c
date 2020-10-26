@@ -17,7 +17,7 @@ int asm_popcnt(uint64_t x) {
      asm ("mov 1, %%rax;\n\t"
 		"and %0, %%rax;\n\t"
 		"div 2, %1;\n\t"
-		"add %%eax, %2;"
+		"add %%eax, %1;"
 		:"=r"(x)
 	    : "r"(x),"r"(s) 
 		:"memory","%eax"
