@@ -13,16 +13,7 @@ int64_t asm_add(int64_t a, int64_t b) {
 
 int asm_popcnt(uint64_t x) {
   int s = 0;
-  for (int i = 0; i < 64; i++) {
-     asm ("mov 1, %%rax;\n\t"
-		"and %[x], %%rax;\n\t"
-		"shr 2, %[x];\n\t"
-		"add %%eax, %[s];"
-		:[x] "+r"(x)
-	    :[s] "r"(s) 
-		:"memory","%eax"
-		);
-  }
+  asm("POPCNT [%x],[%s];":[x] "=r":[s] "r");
   return s;
 }
 
