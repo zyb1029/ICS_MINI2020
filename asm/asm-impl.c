@@ -14,8 +14,13 @@ int64_t asm_add(int64_t a, int64_t b) {
 int asm_popcnt(uint64_t x) {
   int s = 0;
   for (int i = 0; i < 64; i++) {
-    if ((x >> i) & 1) s++;
-  }
+    asm("movq 1, %%rax\n\t"
+		"andq %0, %%rax\n\t"
+		"shrq %0, 1\n\t"
+		"addq %%rax, %1"
+		:"=r"(x)
+	    :"r"(s) 
+  };
   return s;
 }
 
