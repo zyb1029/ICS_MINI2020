@@ -13,7 +13,7 @@ int64_t asm_add(int64_t a, int64_t b) {
 
 int asm_popcnt(uint64_t x) {
   int s = 0;
-  asm("POPCNT [%x],[%s];":[x] "=r":[s] "r");
+  asm("POPCNT [%x],[%s];" : [x] "=r"(x) : [s] "r"(s));
   return s;
 }
 
