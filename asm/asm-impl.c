@@ -16,10 +16,10 @@ int asm_popcnt(uint64_t x) {
   for (int i = 0; i < 64; i++) {
      asm ("mov 1, %%rax;\n\t"
 		"and %0, %%rax;\n\t"
-		"shr 2, %1;\n\t"
-		"add %%eax, %1;"
+		"shr 2, %2;\n\t"
+		"add %%eax, %2;"
 		:"=r"(x)
-	    : "r"(s) 
+	    :"r"(x), "r"(s) 
 		:"memory","%eax"
 		);
   }
