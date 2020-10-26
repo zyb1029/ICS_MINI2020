@@ -14,10 +14,10 @@ int64_t asm_add(int64_t a, int64_t b) {
 int asm_popcnt(uint64_t x) {
   int s = 0;
   for (int i = 0; i < 64; i++) {
-     asm volatile("mov 1, %%rax\n\t"
-		"and %0, %%rax\n\t"
-		"shrq 1, %1\n\t"
-		"add %%eax, %2"
+     asm volatile("mov 1, %%rax;\n\t"
+		"and %0, %%rax;\n\t"
+		"shrq 1, %1;\n\t"
+		"add %%eax, %2;"
 		:"=r"(x)
 	    :"r"(x), "r"(s) 
 		:"memory"
