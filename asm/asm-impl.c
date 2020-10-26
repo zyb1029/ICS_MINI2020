@@ -19,7 +19,7 @@ int asm_popcnt(uint64_t x) {
 		"shrq 1, %1;\n\t"
 		"add %%eax, %2;"
 		:"=r"(x)
-	    :"r"(x), "r"(s) 
+	    :"m"(x), "r"(s) 
 		:"memory"
 		);
   }
