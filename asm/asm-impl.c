@@ -13,7 +13,7 @@ int64_t asm_add(int64_t a, int64_t b) {
 
 int asm_popcnt(uint64_t x) {
   int s = 0;
-  asm("POPCNT [%s],[%x];" : [x] "=r"(x) : [s] "r"(s));
+  asm volatile("POPCNT [%s],[%x];" : [x] "=r"(x) : [s] "r"(s));
   return s;
 }
 
