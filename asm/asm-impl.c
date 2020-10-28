@@ -26,7 +26,7 @@ void *asm_memcpy(void *dest, const void *src, size_t n) {
 			   "mov %[dest], %%edi;\n\t"
 			   "mov %[n], %%ecx;\n\t"
 			  :
-			  :[src] "r"(src), [dest] "=r"(dest), [n] "r"(n)
+			  :[src] "r"(src), [dest] "r"(dest), [n] "r"(n)
 			  );
   return memcpy(dest, src, n);
 }
