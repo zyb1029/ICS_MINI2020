@@ -32,10 +32,10 @@ void *asm_memcpy(void *dest, const void *src, size_t n) {
   return dest;
 }
 
-inline int asm_setjmp(asm_jmp_buf env) {
+int asm_setjmp(asm_jmp_buf env) {
   return setjmp(env);
 }
 
-inline void asm_longjmp(asm_jmp_buf env, int val) {
+void asm_longjmp(asm_jmp_buf env, int val) {
   longjmp(env, val);
 }
