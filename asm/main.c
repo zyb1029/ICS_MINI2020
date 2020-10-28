@@ -1,7 +1,7 @@
 #include "asm.h"
 #include <assert.h>
 #include <stdio.h>
-
+#include <stdlib.h>
 int main() {
   asm_jmp_buf buf;
   int r = asm_setjmp(buf);
