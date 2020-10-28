@@ -25,6 +25,7 @@ void *asm_memcpy(void *dest, const void *src, size_t n) {
   asm volatile("mov %[src], %%rsi;\n\t"
 			   "mov %[dest], %%rdi;\n\t"
 			   "mov %[n], %%rcx;\n\t"
+			   "rep movsb"
 			  :
 			  :[src] "r"(src), [dest] "r"(dest), [n] "r"(n)
 			  );
