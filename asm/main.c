@@ -12,8 +12,7 @@ int main() {
     // TODO: add more tests here.
 	int a[100], n = 15, b[100];
 	for (int i = 0; i < n; i++) a[i] = rand();
-	assert(memcmp(a, asm_memcpy(b, a, n * sizeof(int)), n * sizeof(int)));
-	for (int i = 0; i < n; i++) assert(a[i] == b[i]);
+	assert(memcmp(a, asm_memcpy(b, a, n * sizeof(int)), n * sizeof(int)) == 0);
     asm_longjmp(buf, 123);
   } else {
     assert(r == 123);
