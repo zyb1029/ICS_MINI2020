@@ -13,6 +13,7 @@ int main() {
 	for (int i = 0; i < n; i++) a[i] = rand();
 	asm_memcpy(b, a, n * sizeof(int));
 	for (int i = 0; i < n; i++) assert(a[i] == b[i]);
+	for (int i = 0; i <n; i++) printf("%d %d\n", a[i], b[i]);
     asm_longjmp(buf, 123);
   } else {
     assert(r == 123);
