@@ -22,9 +22,9 @@ int asm_popcnt(uint64_t x) {
 }
 
 void *asm_memcpy(void *dest, const void *src, size_t n) {
-  asm volatile("mov (%[src]), (%[dest]);\n\t"
-			  :[dest] "=r"(dest) 
-			  :[src] "r"(src) 
+  asm volatile("movs (%[src]), (%[dest]);\n\t"
+			  :[dest] "=m"(dest) 
+			  :[src] "m"(src) 
 			  );
   return memcpy(dest, src, n);
 }
