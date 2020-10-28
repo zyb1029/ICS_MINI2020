@@ -12,8 +12,7 @@ int main() {
 	int a[100], n = 15, b[100];
 	for (int i = 0; i < n; i++) a[i] = rand();
 	asm_memcpy(b, a, 5 * sizeof(int));
-	for (int i = 0; i < 5; i++) assert(a[i] == b[i]);
-	for (int i = 0; i <n; i++) printf("%d %d\n", a[i], b[i]);
+	for (int i = 0; i < n; i++) assert(a[i] == b[i]);
     asm_longjmp(buf, 123);
   } else {
     assert(r == 123);
