@@ -14,6 +14,7 @@ int main() {
 	for (int i = 0; i < n; i++) a[i] = rand();
 	assert(memcmp(a, asm_memcpy(b, a, n * sizeof(int)), n * sizeof(int)) == 0);
     asm_longjmp(buf, 123);
+	printf("22");
   } else {
     assert(r == 123);
     printf("PASSED.\n");
