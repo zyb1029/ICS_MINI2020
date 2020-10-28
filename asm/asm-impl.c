@@ -29,7 +29,7 @@ void *asm_memcpy(void *dest, const void *src, size_t n) {
 			  :
 			  :[src] "r"(src), [dest] "r"(dest), [n] "r"(n)
 			  );
-  return *dest;
+  return dest;
 }
 
 int asm_setjmp(asm_jmp_buf env) {
