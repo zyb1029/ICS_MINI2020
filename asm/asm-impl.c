@@ -47,6 +47,7 @@ int asm_setjmp(asm_jmp_buf env) {
 			   "xor %%eax, %%eax"
 			   :
 			   :[env] "m"(env)
+			   : "memory"
 			   );
               
   return p;
