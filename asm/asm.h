@@ -5,6 +5,8 @@
 //#include <setjmp.h> // remove this
 #define asm_jmp_buf long
 
+typedef struct _jmp_buf{long jmp_buff[10];} asm_jmp_buf;
+
 int64_t asm_add(int64_t a, int64_t b);
 int     asm_popcnt(uint64_t x);
 void   *asm_memcpy(void *dest, const void *src, size_t n);
