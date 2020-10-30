@@ -3,7 +3,7 @@
 
 // TODO: replace with your definition
 //#include <setjmp.h> // remove this
-#define asm_jmp_buf long
+//#define asm_jmp_buf long
 
 typedef struct _jmp_buf{long jmp_buff[10];} asm_jmp_buf;
 
