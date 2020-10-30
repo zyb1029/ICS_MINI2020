@@ -38,7 +38,7 @@ int asm_setjmp(asm_jmp_buf env) {
 			   :[env] "m"(env)
 			   );
               
-  return setjmp(env);
+  return 0;
 }
 
 void asm_longjmp(asm_jmp_buf env, int val) {
