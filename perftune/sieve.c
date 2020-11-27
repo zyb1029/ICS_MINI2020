@@ -32,7 +32,7 @@ int *sieve(int n) {
 	  }
 	  if (not_prime[i + 4] == false) primes[tot++] = i + 4;
 	  if (not_prime[i + 5] == false) primes[tot++] = i + 5;
-	  k = (i + 2) * primes[0];
+	  k = (i + 4) * primes[0];
 	  for (int j = 0; j < tot && k <= n; j++) {
 		  not_prime[k] = true;
 		  not_prime[k + primes[j]] = true;
