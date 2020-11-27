@@ -13,19 +13,14 @@ int *sieve(int n) {
 
   for (int i = 2; i <= n; i += 4) {
 	  if (not_prime[i] == false) primes[tot++] = i;
+	  if (not_prime[i + 1] == false) primes[tot++] = i + 1;
 	  k = i * primes[0];
 	  for (int j = 0; j < tot && k <= n; j++) {
 		  not_prime[k] = true;
-		  if (i % primes[j] == 0) break;
-		  k = i * primes[j + 1];
-	  }	  
-	  if (not_prime[i + 1] == false) primes[tot++] = i + 1;
-	  k = (i + 1) * primes[0];
-	  for (int j = 0; j < tot && k <= n; j++) {
-		  not_prime[k] = true;
+		  not_prime[k + prime[j]] = true;
 		  if ((i + 1) % primes[j] == 0) break;
-		  k = (i + 1) * primes[j + 1];
-	  }
+		  k = i * primes[j + 2];
+	  }	  
 	  if (not_prime[i + 2] == false) primes[tot++] = i + 2;
 	  k = (i + 2) * primes[0];
 	  for (int j = 0; j < tot && k <= n; j++) {
