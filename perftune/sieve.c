@@ -18,7 +18,7 @@ int *sieve(int n) {
 	  not_prime[i + 2] = true;
   }
 
-  for (int i = 3; i <= n; i += 6)
+  for (register int i = 3; i <= n; i += 6)
       not_prime[i] = true;
 
   if (n >= 2) primes[tot++] = 2;
