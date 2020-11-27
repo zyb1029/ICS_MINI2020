@@ -19,7 +19,7 @@ int *sieve(int n) {
 		  not_prime[k] = true;
 		  not_prime[k + primes[j]] = true;
 		  if ((i + 1) % primes[j] == 0) break;
-		  k = i * primes[j + 2];
+		  k = i * primes[j + 1];
 	  }	  
 	  if (not_prime[i + 2] == false) primes[tot++] = i + 2;
 	  k = (i + 2) * primes[0];
