@@ -24,10 +24,16 @@ int *sieve(int n) {
   if (n >= 2) primes[tot++] = 2;
   if (n >= 3) primes[tot++] = 3;
 
-  for (int i = 5; i <= n; i++) {
+  for (int i = 5; i <= n; i = i + 6) {
 	if (not_prime[i] == false) {
 		primes[tot++] = i;
 		for (int j = i; j <= n; j += i + i) {
+			not_prime[j] = true;
+		}
+	}
+	if (not_prime[i + 2] == false) {
+		primes[tot++] = i + 2;
+		for (int j = i + 2; j <= n; j += i + i + 4) {
 			not_prime[j] = true;
 		}
 	}
