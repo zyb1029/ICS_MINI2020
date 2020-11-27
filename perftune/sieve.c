@@ -29,7 +29,7 @@ int *sieve(int n) {
 		  p = (i + 1) * primes[l + 1];
 	  }
   }
-  if (primes[tot] > n)tot--;
+  if (primes[tot - 1] > n)tot--;
   primes[tot] = 0;
   return primes;
 }
