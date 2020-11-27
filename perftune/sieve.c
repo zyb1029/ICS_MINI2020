@@ -15,6 +15,7 @@ int *sieve(int n) {
   for (int i = 2; i <= n; i += 3) {
 	  if (not_prime[i] == false) primes[tot++] = i;
 	  if (not_prime[i + 1] == false) primes[tot++] = i + 1;
+	  if (not_prime[i + 2] == false) primes[tot++] = i + 1;
 	  k = i * primes[0];
 	  for (int j = 0; j < tot && k <= n; j++) {
 		  not_prime[k] = true;
