@@ -3,7 +3,7 @@
 #include <assert.h>
 
 #define N 10000000
-#define M 1000000
+#define M 10000000
 
 static bool not_prime[N];
 static int primes[M];
