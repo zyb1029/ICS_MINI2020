@@ -28,6 +28,7 @@ int *sieve(int n) {
 		  not_prime[k] = true;
 		  if ((i + 1) % primes[j] == 0) break;
 		  k = (i + 1) * primes[j + 1];
+	  }
   }
   primes[tot] = 0;
   return primes;
