@@ -26,14 +26,12 @@ int *sieve(int n) {
   for (int i = 5; i <= n; i = i + 4) {
 	if (not_prime[i] == false) {
 		primes[tot++] = i;
-		k = i * 12;
+		k = i * 6;
 		for (int j = i; j <= n; j += k) {
 			not_prime[j] = true;
-			not_prime[j + 6] = true;
 		}
 		for (int j = 5 * i; j <= n; j += k) {
 			not_prime[j] = true;
-			not_prime[j + 6] = true;
 		}
 	}
 	i = i + 2;
