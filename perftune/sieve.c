@@ -6,7 +6,7 @@
 #define N 10000000
 
 static bool not_prime[N];
-static int  primes[1000000];
+static int  primes[100000];
 static int tot = 0;
 static int k = 0;
 int *sieve(int n) {
