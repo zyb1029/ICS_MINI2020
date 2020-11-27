@@ -20,7 +20,7 @@ int *sieve(int n) {
 		else k = i;
 		for (int j = i; j <= n; j += k) {
 			not_prime[j] = true;
-			not_peime[j + (i << 2)] = true;
+			not_prime[j + (i << 2)] = true;
 		}
 	}
   }
