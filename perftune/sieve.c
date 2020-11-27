@@ -9,6 +9,9 @@ static bool not_prime[N];
 static int primes[N];
 
 static int tot = 0;
+static int k = 0;
+static int p = 0;
+
 int *sieve(int n) {
   assert(n + 1 < N);
 
@@ -24,9 +27,11 @@ int *sieve(int n) {
   for (int i = 5; i <= n; i++) {
 	if (not_prime[i] == false) {
 		primes[tot++] = i;
-		for (int j = i; j <= n; j += 6 * i) {
+		k = (i<<2) + (i<<1);
+		p = (i<<2);
+		for (int j = i; j <= n; j += k) {
 			not_prime[j] = true;
-			not_prime[j + (i << 2)] = true;
+			not_prime[j + p] = true;
 		}
 	}
   }
