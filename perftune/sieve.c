@@ -13,9 +13,9 @@ static int p = 0;
 int *sieve(int n) {
   assert(n + 1 < N);
 
-  for (int i = 2; i <= n; i+= 2) {
+  for (int i = 2; i <= n; i += 2) {
 	  if (not_prime[i] == false) primes[tot++] = i;
-	  if (not_prime[i + 1] == false && i != n) primes[tot++] = i + 1;
+	  if (not_prime[i + 1] == false) primes[tot++] = i + 1;
 	  k = i * primes[0];
 	  for (int j = 0; j < tot && k <= n; j++) {
 		  not_prime[k] = true;
@@ -29,6 +29,7 @@ int *sieve(int n) {
 		  p = (i + 1) * primes[l + 1];
 	  }
   }
+  if (prime[tot] > n)tot--;
   primes[tot] = 0;
   return primes;
 }
