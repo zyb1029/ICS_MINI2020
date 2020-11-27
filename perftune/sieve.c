@@ -39,7 +39,10 @@ int *sieve(int n) {
 	i = i + 2;
 	if (not_prime[i] == false) {
 		primes[tot++] = i;
-		for (int j = i; j <= n; j += i + i) {
+		for (int j = i; j <= n; j += i * 6) {
+			not_prime[j] = true;
+		}
+		for (int j = 5 * i; j <= n; j += i * 6) {
 			not_prime[j] = true;
 		}
 	}
