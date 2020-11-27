@@ -1,5 +1,6 @@
 #include <stdbool.h>
 #include <stdio.h>
+#include <assert.h>
 
 #define N 10000000
 #define M 1000000
@@ -12,7 +13,7 @@ static int k = 0;
 static int p = 0;
 
 int *sieve(int n) {
-
+  assert(n + 1 < N);
   for (int i = 2; i <= n; i += 6) {
 	  not_prime[i] = true;
 	  not_prime[i + 2] = true;
@@ -37,7 +38,7 @@ int *sieve(int n) {
 	}
 	i = i + 2;
 	if (not_prime[i] == false) {
-		k = (i << 2) + (i << 1);
+		k += 12;
 		primes[tot++] = i;
 		for (int j = i; j <= n; j += k) {
 			not_prime[j] = true;
