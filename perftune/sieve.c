@@ -44,6 +44,7 @@ int *sieve(int n) {
   if (primes[tot - 1] >= n) tot--;
   if (primes[tot - 1] >= n) tot--;
   if (primes[tot - 1] >= n) tot--;
+  if (primes[tot - 1] >= n) tot--;
   primes[tot] = 0;
   return primes;
 }
