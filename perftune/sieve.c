@@ -11,7 +11,7 @@ static int tot = 0;
 static int k = 0;
 int *sieve(int n) {
 
-  for (register int i = 2; i <= n; i += 6) {
+  for (register int i = 2; i <= n; i += 2) {
 	  if (not_prime[i] == false) primes[tot++] = i;
 	  if (not_prime[i + 1] == false) primes[tot++] = i + 1;
 	  k = i * primes[0];
@@ -20,7 +20,8 @@ int *sieve(int n) {
 		  not_prime[k + primes[j]] = true;
 		  if ((i + 1) % primes[j] == 0) break;
 		  k = i * primes[j + 1];
-	  }	  
+	  }
+	  continue;  
 	  if (not_prime[i + 2] == false) primes[tot++] = i + 2;
 	  if (not_prime[i + 3] == false) primes[tot++] = i + 3;
 	  k = (i + 2) * primes[0];
