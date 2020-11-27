@@ -18,7 +18,7 @@ int *sieve(int n) {
 	  for (int j = 0; j < tot && k <= n; j++) {
 		  not_prime[k] = true;
 		  if (i % primes[j] == 0) break;
-		  k = i * prime[j + 1];
+		  k = i * primes[j + 1];
 	  }	  
   }
   primes[tot] = 0;
