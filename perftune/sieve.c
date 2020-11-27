@@ -11,11 +11,11 @@ static int tot = 0;
 static int k = 0;
 int *sieve(int n) {
 
-  for (register int i = 2; i <= n; i += 2) {
+  for (int i = 2; i <= n; i += 6) {
 	  if (not_prime[i] == false) primes[tot++] = i;
 	  if (not_prime[i + 1] == false) primes[tot++] = i + 1;
 	  k = i * primes[0];
-	  for (register int j = 0; j < tot && k <= n; j++) {
+	  for (int j = 0; j < tot && k <= n; j++) {
 		  not_prime[k] = true;
 		  not_prime[k + primes[j]] = true;
 		  if ((i + 1) % primes[j] == 0) break;
@@ -25,7 +25,7 @@ int *sieve(int n) {
 	  if (not_prime[i + 2] == false) primes[tot++] = i + 2;
 	  if (not_prime[i + 3] == false) primes[tot++] = i + 3;
 	  k = (i + 2) * primes[0];
-	  for (register int j = 0; j < tot && k <= n; j++) {
+	  for (int j = 0; j < tot && k <= n; j++) {
 		  not_prime[k] = true;
 		  not_prime[k + primes[j]] = true;
 		  if ((i + 3) % primes[j] == 0) break;
@@ -34,7 +34,7 @@ int *sieve(int n) {
 	  if (not_prime[i + 4] == false) primes[tot++] = i + 4;
 	  if (not_prime[i + 5] == false) primes[tot++] = i + 5;
 	  k = (i + 4) * primes[0];
-	  for (register int j = 0; j < tot && k <= n; j++) {
+	  for (int j = 0; j < tot && k <= n; j++) {
 		  not_prime[k] = true;
 		  not_prime[k + primes[j]] = true;
 		  if ((i + 5) % primes[j] == 0) break;
