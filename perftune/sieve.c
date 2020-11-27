@@ -29,20 +29,22 @@ int *sieve(int n) {
   for (int i = 5; i <= n; i = i + 4) {
 	if (not_prime[i] == false) {
 		primes[tot++] = i;
-		for (int j = i; j <= n; j += i * 6) {
+		k = (i << 2) + (i << 1);
+		for (int j = i; j <= n; j += k) {
 			not_prime[j] = true;
 		}
-		for (int j = 5 * i; j <= n; j += i * 6) {
+		for (int j = 5 * i; j <= n; j += k) {
 			not_prime[j] = true;
 		}
 	}
 	i = i + 2;
 	if (not_prime[i] == false) {
+		k = (i << 2) + (i << 1);
 		primes[tot++] = i;
-		for (int j = i; j <= n; j += i * 6) {
+		for (int j = i; j <= n; j += k) {
 			not_prime[j] = true;
 		}
-		for (int j = 5 * i; j <= n; j += i * 6) {
+		for (int j = 5 * i; j <= n; j += k) {
 			not_prime[j] = true;
 		}
 	}
