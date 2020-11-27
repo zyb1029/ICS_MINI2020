@@ -24,7 +24,7 @@ int *sieve(int n) {
   if (n >= 2) primes[tot++] = 2;
   if (n >= 3) primes[tot++] = 3;
 
-  for (int i = 3; i <= n; i = i + 4) {
+  for (int i = 5; i <= n; i = i + 4) {
 	if (not_prime[i] == false) {
 		primes[tot++] = i;
 		for (int j = i; j <= n; j += i + i) {
