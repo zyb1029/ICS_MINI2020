@@ -5,19 +5,17 @@
 
 #define N 10000000
 
-static bool is_prime[N];
+static bool not_prime[N];
 static int  primes[N];
 static int tot = 0;
 
-static inline int *sieve(int n) {
+int *sieve(int n) {
   assert(n + 1 < N);
-  for (int i = 0; i <= n; i++)
-    is_prime[i] = true;
 
   for (int i = 2; i <= n; i++) {
-	  if (is_prime[i] == true) primes[tot++] = i;
+	  if (not_prime[i] == false) primes[tot++] = i;
 	  for (int j = 0; j < tot && i * primes[j] <= n; j++) {
-		  is_prime[i * primes[j]] = false;
+		  not_prime[i * primes[j]] = true;
 		  if (i % primes[j] == 0) break;
 	  }	  
   }
