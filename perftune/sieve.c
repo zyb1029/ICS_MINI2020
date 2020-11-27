@@ -21,7 +21,6 @@ int *sieve(int n) {
 		  if ((i + 1) % primes[j] == 0) break;
 		  k = i * primes[j + 1];
 	  }
-	  continue;  
 	  if (not_prime[i + 2] == false) primes[tot++] = i + 2;
 	  if (not_prime[i + 3] == false) primes[tot++] = i + 3;
 	  k = (i + 2) * primes[0];
