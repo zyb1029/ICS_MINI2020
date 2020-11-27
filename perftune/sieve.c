@@ -13,7 +13,7 @@ static int k = 0;
 
 int *sieve(int n) {
   assert(n + 1 < N);
-  for (int i = 2; i <= n; i += 6) {
+  for (register int i = 2; i <= n; i += 6) {
 	  not_prime[i] = true;
 	  not_prime[i + 2] = true;
   }
