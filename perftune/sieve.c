@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 #define N 10000000
+#define M 1000000
 
 static bool not_prime[N];
 static int  primes[M];
