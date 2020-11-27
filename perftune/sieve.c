@@ -12,10 +12,10 @@ static int k = 0;
 int *sieve(int n) {
   assert(n + 1 < N);
 
-  for (i = 2; i <= n; i++) {
+  for (int i = 2; i <= n; i++) {
 	  if (not_prime[i] == false) primes[tot++] = i;
 	  k = i * primes[0];
-	  for (j = 0; j < tot && k <= n; j++) {
+	  for (int j = 0; j < tot && k <= n; j++) {
 		  not_prime[k] = true;
 		  if (i % primes[j] == 0) break;
 		  k = i * primes[j + 1];
