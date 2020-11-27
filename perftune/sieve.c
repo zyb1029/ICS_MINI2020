@@ -13,7 +13,7 @@ static int tot = 0;
 int *sieve(int n) {
   assert(n + 1 < N);
   
-  for (int i = 2; i <= n; i++) {
+  for (int i = 2; i <= n; i += 6 ) {
 	if (not_prime[i] == false) {
 		primes[tot++] = i;
 		for (int j = i + i; j <= n; j += i)
