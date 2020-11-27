@@ -5,7 +5,7 @@
 #define N 10000020
 
 static bool not_prime[N];
-static int primes[M];
+static int primes[N];
 
 static int tot = 0;
 static int k = 0;
