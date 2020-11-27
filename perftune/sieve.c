@@ -18,11 +18,11 @@ int *sieve(int n) {
   for (int i = 2; i <= n; i += 2)
 	  not_prime[i] = true;
 	   
- // for (int i = 3; i <= n; i += 6)
-//	  not_prime[i] = true;
+  for (int i = 3; i <= n; i += 6)
+      not_prime[i] = true;
 
   if (n >= 2) primes[tot++] = 2;
- // if (n >= 3) primes[tot++] = 3;
+  if (n >= 3) primes[tot++] = 3;
 
   for (int i = 3; i <= n; i = i + 2) {
 	if (not_prime[i] == false) {
