@@ -68,7 +68,7 @@ void cache_write(uintptr_t addr, uint32_t data, uint32_t wmask) {
 	T++;
 	addr = (addr & ~0x3);
 	printf("%d %lx %x %x\n", T, addr, data, wmask);
-//	if (addr == 0x161a3ec)assert(0);
+	if (addr == 0x161a3ec)assert(0);
 	int delta = cal_delta(addr);
 	int group = cal_group(addr);
 	int tag = cal_tag(addr);
