@@ -25,7 +25,7 @@ void mem_write(uintptr_t block_num, const uint8_t *buf) {
 
 uint32_t mem_uncache_read(uintptr_t addr) {
   uint32_t *p = (void *)mem_diff + (addr & ~0x3);
-  printf("%p\n", p);
+  printf("%p\n", addr);
   return *p;
 }
 
