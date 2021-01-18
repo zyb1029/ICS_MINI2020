@@ -81,7 +81,7 @@ void cache_write(uintptr_t addr, uint32_t data, uint32_t wmask) {
 	switch(wmask) {
 		case 0xff: up = 1; break;	
 		case 0xffff: up = 2; break;
-		case 0xffffffff up = 4; break;
+		case 0xffffffff: up = 4; break;
 		default: assert(0);
 	}
 
