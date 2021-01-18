@@ -66,6 +66,7 @@ uint32_t cache_read(uintptr_t addr) {
 
 void cache_write(uintptr_t addr, uint32_t data, uint32_t wmask) {
 	T++;
+	addr = (addr & ~0x3);
 	printf("%d %lx %x %x\n", T, addr, data, wmask);
 	int delta = cal_delta(addr);
 	int group = cal_group(addr);
