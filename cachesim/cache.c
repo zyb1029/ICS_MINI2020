@@ -36,6 +36,8 @@ int cal_block(uintptr_t addr) {
 } 
 int T;
 uint32_t cache_read(uintptr_t addr) {
+	T++;
+    printf("%d %lx ", T, addr, data);
 	int delta = cal_delta(addr);
 	int group = cal_group(addr);
 	int tag = cal_tag(addr);
@@ -57,6 +59,7 @@ uint32_t cache_read(uintptr_t addr) {
 		ans = ans + ((uint32_t)cache[p][i] << (8 * (i - delta)));
 		if (i >=64)assert(0);	
 	}
+	printf("%x\n", ans);
 	return ans;
 }
 
