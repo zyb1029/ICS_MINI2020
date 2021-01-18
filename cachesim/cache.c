@@ -56,6 +56,7 @@ uint32_t cache_read(uintptr_t addr) {
 	}
 	uint32_t ans = 0;
 	for (int i = delta; i < delta + 4; i++) {
+		printf("%x ", cache[p][i]);
 		ans = ans + ((uint32_t)cache[p][i] << (8 * (delta + 3 - i)));
 		if (i >=64)assert(0);	
 	}
