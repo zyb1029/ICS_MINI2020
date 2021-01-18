@@ -23,7 +23,7 @@ int cal_delta(uintptr_t addr) {
 }
 
 int cal_group(uintptr_t addr) {
-	return (addr & ((1 << (_delta + _group)- 1))) >> _delta;
+	return (addr & (((1 << (_delta + _group)) - 1))) >> _delta;
 }
 
 int cal_tag(uintptr_t addr) {
