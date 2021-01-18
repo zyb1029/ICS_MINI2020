@@ -97,11 +97,10 @@ void cache_write(uintptr_t addr, uint32_t data, uint32_t wmask) {
 		if ((wmask & ((0xff) << (8 * (i - delta)))) != 0){
 			cache[p][i] = (data & (0xff << (8 * (i - delta)))) >> 
 													(8 * (i - delta));
-			printf("%x %x\n", i, cache[p][i]);
 		}
 		if (i >=64)assert(0);	
 	}
-	if (addr == 0x161a3ec)assert(0);
+	mem_write(cal_block(addr), cache[p]);
 }
 
 
