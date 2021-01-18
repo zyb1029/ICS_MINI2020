@@ -77,10 +77,11 @@ void cache_write(uintptr_t addr, uint32_t data, uint32_t wmask) {
 		valid[p] = true;
 		tags[p] = tag;
 	}
+	printf("5\n");
 	int up = 0;
 	switch(wmask) {
 		case 0xff: up = 1; break;	
-		case 0xffff: up = 2; break;
+		case 0xff00: up = 2; break;
 		case 0xffffffff: up = 4; break;
 		default: printf("%8x\n", wmask), assert(0);
 	}
