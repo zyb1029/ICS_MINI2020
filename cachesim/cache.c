@@ -34,7 +34,7 @@ int cal_tag(uintptr_t addr) {
 int cal_block(uintptr_t addr) {
 	return addr >> BLOCK_WIDTH;
 } 
-
+int T;
 uint32_t cache_read(uintptr_t addr) {
 	int delta = cal_delta(addr);
 	int group = cal_group(addr);
@@ -61,6 +61,8 @@ uint32_t cache_read(uintptr_t addr) {
 }
 
 void cache_write(uintptr_t addr, uint32_t data, uint32_t wmask) {
+	T++;
+	printf("%d %d %d %d\n", T, addr, data, wmask);
 	int delta = cal_delta(addr);
 	int group = cal_group(addr);
 	int tag = cal_tag(addr);
