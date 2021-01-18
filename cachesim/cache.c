@@ -23,7 +23,7 @@ int cal_delta(uintptr_t addr) {
 }
 
 int cal_group(uintptr_t addr) {
-	return (addr & (((1 << (_delta + _group)) - 1))) >> _delta;
+	return (addr & ((1 << (_delta + _group)) - 1)) >> _delta;
 }
 
 int cal_tag(uintptr_t addr) {
@@ -61,8 +61,36 @@ uint32_t cache_read(uintptr_t addr) {
 }
 
 void cache_write(uintptr_t addr, uint32_t data, uint32_t wmask) {
-	assert(0);
+	int delta = cal_delta(addr);
+	int group = cal_group(addr);
+	int tag = cal_tag(addr);
+	group <<= 2;
+	bool flag = false, p;
+	for (int i = group; i < group + 4; i++)
+		if (tags[i] == tag && valid[i]) {
+			flag = true;
+			p = i;
+		}
+	if (flag == false) {
+		p = group + rand() % 4;
+		mem_read(cal_block(addr), cache[p]);
+		valid[p] = true;
+		tags[p] = tag;
+	}
+	int up = 0;
+	switch(wmask) {
+		case 0xff: up = 1; break;	
+		case 0xffff: up = 2; break;
+		case 0xffffffff up = 4; break;
+		default: assert(0);
+	}
+
+	for (int i = delta; i < delta + up; i++) {
+		cache[p][i] = (data & (0xff << (8 * (i - data)))) >> (8 * (i - data));
+		if (i >=64)assert(0);	
+	}
 }
+
 
 int t = 0;
 void init_cache(int total_size_width, int associativity_width) {
