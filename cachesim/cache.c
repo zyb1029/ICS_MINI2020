@@ -77,7 +77,6 @@ void cache_write(uintptr_t addr, uint32_t data, uint32_t wmask) {
 		valid[p] = true;
 		tags[p] = tag;
 	}
-	printf("5\n");
 	int up = 0;
 	switch(wmask) {
 		case 0xff: up = 1; break;	
@@ -86,8 +85,10 @@ void cache_write(uintptr_t addr, uint32_t data, uint32_t wmask) {
 		default: printf("%8x\n", wmask), assert(0);
 	}
 
-	for (int i = delta; i < delta + up; i++) {
-		cache[p][i] = (data & (0xff << (8 * (i - data)))) >> (8 * (i - data));
+	for (int i = delta; i < delta + 4; i++) {
+		if (wmask & ((0xff) << (8 * (i - delta))) != 0)
+			cache[p][i] = (data & (0xff << (8 * (i - delta)))) >> 
+													(8 * (i - dalta));
 		if (i >=64)assert(0);	
 	}
 }
