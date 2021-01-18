@@ -37,7 +37,7 @@ int cal_block(uintptr_t addr) {
 int T;
 uint32_t cache_read(uintptr_t addr) {
 	T++;
-    printf("%d %lx ", T, addr, data);
+    printf("%d %lx ", T, addr);
 	int delta = cal_delta(addr);
 	int group = cal_group(addr);
 	int tag = cal_tag(addr);
