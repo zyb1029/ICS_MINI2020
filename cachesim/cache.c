@@ -68,7 +68,6 @@ void cache_write(uintptr_t addr, uint32_t data, uint32_t wmask) {
 	T++;
 	addr = (addr & ~0x3);
 	printf("%d %lx %x %x\n", T, addr, data, wmask);
-	if (addr == 0x161a3ec)assert(0);
 	int delta = cal_delta(addr);
 	int group = cal_group(addr);
 	int tag = cal_tag(addr);
@@ -95,11 +94,14 @@ void cache_write(uintptr_t addr, uint32_t data, uint32_t wmask) {
 	}
 */
 	for (int i = delta; i < delta + 4; i++) {
-		if ((wmask & ((0xff) << (8 * (i - delta)))) != 0)
+		if ((wmask & ((0xff) << (8 * (i - delta)))) != 0){
 			cache[p][i] = (data & (0xff << (8 * (i - delta)))) >> 
 													(8 * (i - delta));
+			printf("%x %x\n", i, cache[p][i]);
+		}
 		if (i >=64)assert(0);	
 	}
+	if (addr == 0x161a3ec)assert(0);
 }
 
 
